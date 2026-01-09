@@ -1,199 +1,192 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Personal Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paulyn Joy Manatlao | Floral Portfolio</title>
 
-    <!-- FONT AWESOME ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: radial-gradient(circle at top, #0f2027, #000000);
-            color: #e0e0e0;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #fff1f7, #fdfcff);
+      color: #4a4a4a;
+      overflow-x: hidden;
+    }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 12px 0;
-            box-shadow: 0 0 15px #00ffff55;
-            z-index: 1000;
-        }
+    /* Floral Background Overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url('https://i.ibb.co/5Fj5fYJ/floral-bg.png') repeat;
+      opacity: 0.15;
+      z-index: -1;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
+    header {
+      text-align: center;
+      padding: 90px 20px 60px;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
+    }
 
-        nav a {
-            color: #00ffff;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 1px;
-            font-size: 0.95em;
-        }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #c94f7c;
+      margin-bottom: 10px;
+    }
 
-        nav a i {
-            margin-right: 6px;
-        }
+    header p {
+      font-size: 1.1rem;
+      color: #7a4a5a;
+      letter-spacing: 1px;
+    }
 
-        nav a:hover {
-            text-shadow: 0 0 8px #00ffff;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px 0;
+    }
 
-        header {
-            text-align: center;
-            padding: 120px 20px 60px;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            box-shadow: 0 0 20px #00ffff55;
-        }
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #c94f7c;
+      transition: 0.3s;
+    }
 
-        header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #00ffff;
-            box-shadow: 0 0 25px #00ffff;
-            margin-bottom: 20px;
-        }
+    nav a:hover {
+      color: #ff85b3;
+      text-shadow: 0 0 5px #ffb6c1;
+    }
 
-        header h1 {
-            font-size: 1.5em;
-            margin: 10px 0 5px;
-            letter-spacing: 2px;
-        }
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
 
-        header p {
-            color: #00ffff;
-            font-size: 0.80em;
-        }
+    section h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #c94f7c;
+      margin-bottom: 30px;
+    }
 
-        .quote {
-            font-style: italic;
-            font-size: 1.10em;
-            color: #c9ffff;
-            max-width: 600px;
-            margin: 15px auto 0;
-            line-height: 1.6;
-        }
+    .about, .projects, .contact {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(255, 182, 193, 0.25);
+    }
 
-        .quote span {
-            display: block;
-            margin-top: 6px;
-            color: #00ffff;
-            font-weight: bold;
-        }
+    .projects .project {
+      background: #fff5f8;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      border-left: 5px solid #ffb6c1;
+    }
 
-        section {
-            margin: 30px auto;
-            max-width: 900px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 15px #00ffff22;
-        }
+    .projects .project h3 {
+      color: #b03a64;
+      margin-bottom: 8px;
+    }
 
-        h2 {
-            color: #00ffff;
-            border-bottom: 2px solid #00ffff;
-            padding-bottom: 10px;
-            letter-spacing: 1px;
-        }
+    .contact {
+      text-align: center;
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 28px;
+      background: #c94f7c;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-        ul li::before {
-            content: "▹ ";
-            color: #00ffff;
-        }
+    .contact a:hover {
+      background: #ff85b3;
+      box-shadow: 0 0 15px #ffb6c1;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 0.9em;
-        }
-
-        a {
-            color: #00ffff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-shadow: 0 0 5px #00ffff;
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #8a5a6a;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="#home"><i class="fas fa-house"></i>HOME</a></li>
-            <li><a href="#about"><i class="fas fa-user"></i>ABOUT ME</a></li>
-            <li><a href="#skills"><i class="fas fa-code"></i>SKILLS</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i>CONTACT</a></li>
-        </ul>
-    </nav>
+  <!-- Header -->
+  <header>
+    <h1>Paulyn Joy Manatlao</h1>
+    <p>Web Enthusiast • Creative Thinker • Lifelong Learner</p>
+  </header>
 
-    <header id="home">
-        <img src="https://uploads.onecompiler.io/44a2gqpwf/44a3an3gg/1000002594.jpg" alt="Profile Picture">
-        <h1>Paulyn Joy Manatlao</h1>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-        <div class="quote">
-            “Despite pain and challenge, strength and hope will lead you to victory”
-            <span>- Lupus Warrior</span>
-        </div>
-    </header>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Paulyn Joy Manatlao. I enjoy creating elegant and user-friendly web designs inspired by
+      beauty, balance, and creativity. I believe technology and art can come together to create meaningful
+      digital experiences.
+    </p>
+  </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a dedicated and motivated student with a strong interest in modern web technologies.
-            I enjoy creating futuristic, clean, and user-friendly designs that combine creativity and functionality.
-        </p>
-        <p>
-            My personal journey has taught me resilience, patience, and strength — values that I bring into
-            my studies, projects, and future career in technology.
-        </p>
-    </section>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Critical Thinking</li>
-            <li>Problem Solving</li>
-            <li>Attention to Detail</li>
-            <li>Analytical Thinking</li>
-            <li>Willingness to Learn New Technologies</li>
-        </ul>
-    </section>
+    <div class="project">
+      <h3>Floral Portfolio Website</h3>
+      <p>A soft, aesthetic portfolio design focused on elegance and simplicity using HTML and CSS.</p>
+    </div>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="#">paulynjoynebresmanatlao@gmail.com</a></p>
-        <p>Facebook: <a href="#">facebook.com/yourprofile</a></p>
-        <p>GitHub: <a href="#">github.com/yourusername</a></p>
-    </section>
+    <div class="project">
+      <h3>Personal Web Page</h3>
+      <p>A responsive personal website showcasing skills, interests, and contact information.</p>
+    </div>
+  </section>
 
-    <footer>
-        <p>© 2026 Paulyn Joy Manatlao</p>
-    </footer>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s connect 💐</p>
+    <a href="mailto:paulynjoynebresmanatlao@gmail.com">Email</a>
+    <a href="#">GitHub</a>
+    <a href="#">Facebook</a>
+  </section>
+
+  <footer>
+    &copy; 2026 Paulyn Joy Manatlao. All rights reserved.
+  </footer>
 
 </body>
 </html>
